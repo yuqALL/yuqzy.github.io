@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-25T06:26:58.000Z</updated>
+  <updated>2018-01-30T04:20:14.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,158 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>post name</title>
-    <link href="http://yoursite.com/post-name/"/>
-    <id>http://yoursite.com/post-name/</id>
-    <published>2018-10-25T06:26:58.000Z</published>
-    <updated>2018-10-25T06:26:58.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>git基本操作</title>
-    <link href="http://yoursite.com/git/"/>
-    <id>http://yoursite.com/git/</id>
-    <published>2018-10-23T16:00:00.000Z</published>
-    <updated>2018-10-25T09:08:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;git基本操作.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
-	&lt;/div&gt;
-
-
-
-        
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="git" scheme="http://yoursite.com/categories/language/git/"/>
-    
-    
-      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tutorial: How to Use Hexo&#39;s A-Snippet Theme</title>
-    <link href="http://yoursite.com/tutorial/"/>
-    <id>http://yoursite.com/tutorial/</id>
-    <published>2018-01-24T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      Just Do It!
-    
-    </summary>
-    
-      <category term="tutorial" scheme="http://yoursite.com/categories/tutorial/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="tutorial" scheme="http://yoursite.com/tags/tutorial/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Elements</title>
-    <link href="http://yoursite.com/elements/"/>
-    <id>http://yoursite.com/elements/</id>
-    <published>2018-01-23T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are
-        
-      
-    
-    </summary>
-    
-      <category term="test" scheme="http://yoursite.com/categories/test/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Poem Background Image Test</title>
-    <link href="http://yoursite.com/poem-background-img-test/"/>
-    <id>http://yoursite.com/poem-background-img-test/</id>
-    <published>2018-01-22T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;どの帝の御代であったか、女御や
-        
-      
-    
-    </summary>
-    
-      <category term="test" scheme="http://yoursite.com/categories/test/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Chinese Poem Test | 師說</title>
-    <link href="http://yoursite.com/chinese-poem-test/"/>
-    <id>http://yoursite.com/chinese-poem-test/</id>
-    <published>2018-01-20T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;　古之學者必有師。師者，所以傳道受業解惑也。人非生而知之者，孰能無惑？惑而不從師，其為惑也，終不解矣。生乎吾前，其聞道也固先乎吾，吾從而師之；生乎吾後，其聞道也亦先乎吾，吾從而師之。吾師道也，夫庸知其年之先後生於吾乎？是故無貴無賤，無長無少，道之所存，師之所存也。　&lt;br&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="poetry" scheme="http://yoursite.com/categories/poetry/"/>
-    
-      <category term="test" scheme="http://yoursite.com/categories/test/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-  </entry>
   
   <entry>
     <title>中文简体测试 | Chinese (Simplified) Test</title>
@@ -182,128 +30,6 @@
         
         
           &lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="test" scheme="http://yoursite.com/categories/test/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>049 Group Anagrams</title>
-    <link href="http://yoursite.com/049-Group-Anagrams/"/>
-    <id>http://yoursite.com/049-Group-Anagrams/</id>
-    <published>2018-01-19T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Given a string &lt;strong&gt;s&lt;/strong&gt;, find the
-        
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="python" scheme="http://yoursite.com/categories/language/python/"/>
-    
-      <category term="cpp" scheme="http://yoursite.com/categories/language/cpp/"/>
-    
-      <category term="field" scheme="http://yoursite.com/categories/field/"/>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/field/algorithm/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>005 Longest Palindromic Substring</title>
-    <link href="http://yoursite.com/005-Longest-Palindromic-Substring/"/>
-    <id>http://yoursite.com/005-Longest-Palindromic-Substring/</id>
-    <published>2018-01-19T09:53:31.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Given a string &lt;strong&gt;s&lt;/strong&gt;, find the
-        
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="python" scheme="http://yoursite.com/categories/language/python/"/>
-    
-      <category term="field" scheme="http://yoursite.com/categories/field/"/>
-    
-      <category term="algorithm" scheme="http://yoursite.com/categories/field/algorithm/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中文繁體測試 | Chinese (Traditional) Test</title>
-    <link href="http://yoursite.com/chinese-traditional-test/"/>
-    <id>http://yoursite.com/chinese-traditional-test/</id>
-    <published>2018-01-18T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="test" scheme="http://yoursite.com/categories/test/"/>
-    
-    
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</title>
-    <link href="http://yoursite.com/long-title/"/>
-    <id>http://yoursite.com/long-title/</id>
-    <published>2018-01-16T16:00:00.000Z</published>
-    <updated>2018-01-30T04:20:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;This post has a long title. Make sure the title displayed
         
       
     
@@ -430,11 +156,11 @@
   </entry>
   
   <entry>
-    <title>3维运动表达</title>
-    <link href="http://yoursite.com/3D_Vision_1/"/>
-    <id>http://yoursite.com/3D_Vision_1/</id>
+    <title>Jsoup代码解读之三-Document的输出</title>
+    <link href="http://yoursite.com/jsoup%20learning%203/"/>
+    <id>http://yoursite.com/jsoup learning 3/</id>
     <published>2017-12-31T16:00:00.000Z</published>
-    <updated>2018-10-25T08:30:04.000Z</updated>
+    <updated>2018-10-25T08:15:58.000Z</updated>
     
     <summary type="html">
     
@@ -442,38 +168,7 @@
       
         
         
-          &lt;h1 id=&quot;3维运动表达&quot;&gt;&lt;a href=&quot;#3维运动表达&quot; class=&quot;headerlink&quot; title=&quot;3维运动表达&quot;&gt;&lt;/a&gt;3维运动表达&lt;/h1&gt;&lt;hr&gt;
-&lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="c++" scheme="http://yoursite.com/categories/language/c/"/>
-    
-    
-      <category term="math" scheme="http://yoursite.com/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jsoup代码解读之四-parser(上)</title>
-    <link href="http://yoursite.com/jsoup%20learning%204/"/>
-    <id>http://yoursite.com/jsoup learning 4/</id>
-    <published>2017-12-31T16:00:00.000Z</published>
-    <updated>2018-10-25T08:16:50.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Jsoup代码解读之四-parser-上&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之四-parser-上&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;Jsoup代码解读之三-Document的输出&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之三-Document的输出&quot; class=&quot;headerlink&quot;
         
       
     
@@ -517,11 +212,11 @@
   </entry>
   
   <entry>
-    <title>Jsoup代码解读之三-Document的输出</title>
-    <link href="http://yoursite.com/jsoup%20learning%203/"/>
-    <id>http://yoursite.com/jsoup learning 3/</id>
+    <title>Jsoup代码解读之四-parser(上)</title>
+    <link href="http://yoursite.com/jsoup%20learning%204/"/>
+    <id>http://yoursite.com/jsoup learning 4/</id>
     <published>2017-12-31T16:00:00.000Z</published>
-    <updated>2018-10-25T08:15:58.000Z</updated>
+    <updated>2018-10-25T08:16:50.000Z</updated>
     
     <summary type="html">
     
@@ -529,7 +224,35 @@
       
         
         
-          &lt;h2 id=&quot;Jsoup代码解读之三-Document的输出&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之三-Document的输出&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;Jsoup代码解读之四-parser-上&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之四-parser-上&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="language" scheme="http://yoursite.com/categories/language/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
+    
+    
+      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jsoup代码解读之六-parser(下)</title>
+    <link href="http://yoursite.com/jsoup%20learning%206/"/>
+    <id>http://yoursite.com/jsoup learning 6/</id>
+    <published>2017-12-31T16:00:00.000Z</published>
+    <updated>2018-10-25T08:18:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Jsoup代码解读之六-parser-下&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之六-parser-下&quot; class=&quot;headerlink&quot;
         
       
     
@@ -569,6 +292,65 @@
     
     
       <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jsoup代码解读之八-防御XSS攻击</title>
+    <link href="http://yoursite.com/jsoup%20learning%208/"/>
+    <id>http://yoursite.com/jsoup learning 8/</id>
+    <published>2017-12-31T16:00:00.000Z</published>
+    <updated>2018-10-25T08:18:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Jsoup代码解读之八-防御XSS攻击&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之八-防御XSS攻击&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="language" scheme="http://yoursite.com/categories/language/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
+    
+    
+      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3维运动表达</title>
+    <link href="http://yoursite.com/3D_Vision_1/"/>
+    <id>http://yoursite.com/3D_Vision_1/</id>
+    <published>2017-12-31T16:00:00.000Z</published>
+    <updated>2018-10-25T08:30:04.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;3维运动表达&quot;&gt;&lt;a href=&quot;#3维运动表达&quot; class=&quot;headerlink&quot; title=&quot;3维运动表达&quot;&gt;&lt;/a&gt;3维运动表达&lt;/h1&gt;&lt;hr&gt;
+&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="language" scheme="http://yoursite.com/categories/language/"/>
+    
+      <category term="c++" scheme="http://yoursite.com/categories/language/c/"/>
+    
+    
+      <category term="math" scheme="http://yoursite.com/tags/math/"/>
     
   </entry>
   
