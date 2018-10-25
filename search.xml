@@ -552,9 +552,9 @@
       
       <categories>
           
-          <category> test </category>
-          
           <category> language </category>
+          
+          <category> test </category>
           
           <category> python </category>
           
