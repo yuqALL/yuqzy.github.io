@@ -36,14 +36,14 @@
     </url>
     
     <url>
-        <loc>http://yoursite.com/leetcode-tag/</loc>
+        <loc>http://yoursite.com/leetcode-category/</loc>
         <lastmod>2018-01-30T04:20:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://yoursite.com/leetcode-category/</loc>
+        <loc>http://yoursite.com/leetcode-tag/</loc>
         <lastmod>2018-01-30T04:20:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
