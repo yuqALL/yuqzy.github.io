@@ -31,6 +31,42 @@
   </entry>
   
   <entry>
+    <title>git基本操作</title>
+    <link href="http://yoursite.com/git/"/>
+    <id>http://yoursite.com/git/</id>
+    <published>2018-10-23T16:00:00.000Z</published>
+    <updated>2018-10-25T09:03:38.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;git基本操作.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+	&lt;/div&gt;
+
+
+
+        
+      
+    
+    </summary>
+    
+      <category term="language" scheme="http://yoursite.com/categories/language/"/>
+    
+      <category term="git" scheme="http://yoursite.com/categories/language/git/"/>
+    
+    
+      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tutorial: How to Use Hexo&#39;s A-Snippet Theme</title>
     <link href="http://yoursite.com/tutorial/"/>
     <id>http://yoursite.com/tutorial/</id>
@@ -181,9 +217,9 @@
     
       <category term="python" scheme="http://yoursite.com/categories/language/python/"/>
     
-      <category term="field" scheme="http://yoursite.com/categories/field/"/>
-    
       <category term="cpp" scheme="http://yoursite.com/categories/language/cpp/"/>
+    
+      <category term="field" scheme="http://yoursite.com/categories/field/"/>
     
       <category term="algorithm" scheme="http://yoursite.com/categories/field/algorithm/"/>
     
@@ -450,6 +486,34 @@
   </entry>
   
   <entry>
+    <title>Jsoup代码解读之八-防御XSS攻击</title>
+    <link href="http://yoursite.com/jsoup%20learning%208/"/>
+    <id>http://yoursite.com/jsoup learning 8/</id>
+    <published>2017-12-31T16:00:00.000Z</published>
+    <updated>2018-10-25T08:18:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Jsoup代码解读之八-防御XSS攻击&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之八-防御XSS攻击&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="language" scheme="http://yoursite.com/categories/language/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
+    
+    
+      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jsoup代码解读之五-parser(中)</title>
     <link href="http://yoursite.com/jsoup%20learning%205/"/>
     <id>http://yoursite.com/jsoup learning 5/</id>
@@ -491,62 +555,6 @@
         
         
           &lt;h2 id=&quot;Jsoup代码解读之七-实现一个CSS-Selector&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之七-实现一个CSS-Selector&quot; class=&quot;headerlink&quot; title=&quot;Jsoup代码解读之七-实现一个CSS
-        
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
-    
-    
-      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jsoup代码解读之六-parser(下)</title>
-    <link href="http://yoursite.com/jsoup%20learning%206/"/>
-    <id>http://yoursite.com/jsoup learning 6/</id>
-    <published>2017-12-31T16:00:00.000Z</published>
-    <updated>2018-10-25T08:18:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Jsoup代码解读之六-parser-下&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之六-parser-下&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
-    
-    
-      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jsoup代码解读之八-防御XSS攻击</title>
-    <link href="http://yoursite.com/jsoup%20learning%208/"/>
-    <id>http://yoursite.com/jsoup learning 8/</id>
-    <published>2017-12-31T16:00:00.000Z</published>
-    <updated>2018-10-25T08:18:58.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Jsoup代码解读之八-防御XSS攻击&quot;&gt;&lt;a href=&quot;#Jsoup代码解读之八-防御XSS攻击&quot; class=&quot;headerlink&quot;
         
       
     

@@ -9,7 +9,7 @@
     <meta name="description" content="A website for A-RSnippet Hexo Theme">
     <meta name="author" content="Qiang Yu">
     <meta name="keyword" content="machine learning, bootstrap">
-    <link rel="canonical" href="http://yoursite.com/jsoup learning 5/">
+    <link rel="canonical" href="http://yoursite.com/git/">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
     <link rel="alternate" type="application/atom+xml" title="yuqZY &lt;a class=&#34;github-button&#34; href=&#34;https://github.com/yuqZY/yuqzy.github.io&#34; data-icon=&#34;octicon-star&#34; data-show-count=&#34;true&#34; aria-label=&#34;Star huyingjie/hexo-theme-A-RSnippet on GitHub&#34;&gt;Star&lt;/a&gt;" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -21,7 +21,7 @@
 
     <title>
         
-        Jsoup代码解读之五-parser(中)｜yuq Blog
+        git基本操作｜yuq Blog
         
     </title>
 
@@ -169,12 +169,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                     <div class="site-heading">
-                        <h1>Jsoup代码解读之五-parser(中)</h1>
+                        <h1>git基本操作</h1>
                         
                         
                           <span class="meta">
                                <span class="meta-item">Author: Qiang Yu</span>
-                               <span class="meta-item">Date: 2018-01-01</span>
+                               <span class="meta-item">Date: 2018-10-24</span>
                                
                                  <span class="meta-item">Updated On: 2018-10-25</span>
                                
@@ -183,7 +183,7 @@
                               Categories: 
                               <a class="tag" href="/categories/#language" title="language">language</a>
                               
-                              <a class="tag" href="/categories/#java" title="java">java</a>
+                              <a class="tag" href="/categories/#git" title="git">git</a>
                               
                           </div>
                           <div class="tags text-center">
@@ -213,54 +213,28 @@
 </div><hr>
           
           
-          <h2 id="Jsoup代码解读之五-parser-中"><a href="#Jsoup代码解读之五-parser-中" class="headerlink" title="Jsoup代码解读之五-parser(中)"></a>Jsoup代码解读之五-parser(中)</h2><p>上一篇文章讲到了状态机和词法分析的基本知识，这一节我们来分析Jsoup是如何进行词法分析的。</p>
-<h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><p>先介绍以下parser包里的主要类：</p>
-<ul>
-<li><p><code>Parser</code></p>
-<p>  Jsoup parser的入口facade，封装了常用的parse静态方法。可以设置<code>maxErrors</code>，用于收集错误记录，默认是0，即不收集。与之相关的类有<code>ParseError</code>,<code>ParseErrorList</code>。基于这个功能，我写了一个<a href="https://github.com/code4craft/jsoup-learning/tree/master/src/main/java/us/codecraft/learning/parser" target="_blank" rel="noopener"><code>PageErrorChecker</code></a>来对页面做语法检查，并输出语法错误。</p>
-</li>
-<li><p><code>Token</code> </p>
-<p>  保存单个的词法分析结果。Token是一个抽象类，它的实现有<code>Doctype</code>,<code>StartTag</code>,<code>EndTag</code>,<code>Comment</code>,<code>Character</code>,<code>EOF</code>6种，对应6种词法类型。</p>
-</li>
-<li><p><code>Tokeniser</code> </p>
-<p>  保存词法分析过程的状态及结果。比较重要的两个字段是<code>state</code>和<code>emitPending</code>，前者保存状态，后者保存输出。其次还有<code>tagPending</code>/<code>doctypePending</code>/<code>commentPending</code>，保存还没有填充完整的Token。</p>
-</li>
-<li><p><code>CharacterReader</code></p>
-<p>  对读取字符的逻辑的封装，用于Tokenize时候的字符输入。CharacterReader包含了类似NIO里ByteBuffer的<code>consume()</code>、<code>unconsume()</code>、<code>mark()</code>、<code>rewindToMark()</code>，还有高级的<code>consumeTo()</code>这样的用法。</p>
-</li>
-<li><p><code>TokeniserState</code></p>
-<p>   用枚举实现的词法分析状态机。</p>
-</li>
-<li><p><code>HtmlTreeBuilder</code></p>
-<p>  语法分析，通过token构建DOM树的类。</p>
-</li>
-<li><p><code>HtmlTreeBuilderState</code></p>
-<p>  语法分析状态机。</p>
-</li>
-<li><p><code>TokenQueue</code></p>
-<p>  虽然披了个Token的马甲，其实是在query的时候用到，留到select部分再讲。</p>
-</li>
-</ul>
-<h2 id="词法分析状态机"><a href="#词法分析状态机" class="headerlink" title="词法分析状态机"></a>词法分析状态机</h2><p>现在我们来讲讲HTML的词法分析过程。这里借用一下<a href="http://ued.ctrip.com/blog/?p=3295" target="_blank" rel="noopener">http://ued.ctrip.com/blog/?p=3295</a>里的图，图中描述了一个Tag标签的状态转移过程，</p>
-<p><img src="http://taligarsiel.com/Projects/image019.png" alt="lexer"></p>
-<p>这里忽略了HTML注释、实体以及属性，只保留基本的开始/结束标签，例如下面的HTML:</p>
-<pre><code>&lt;div&gt;test&lt;/div&gt;
-</code></pre><p>Jsoup里词法分析比较复杂，我从里面抽取出了对应的部分，就成了我们的miniSoupLexer(这里省略了部分代码，完整代码可以看这里<a href="https://github.com/code4craft/jsoup-learning/blob/master/src/main/java/org/jsoup/parser/MiniSoupTokeniserState.java" target="_blank" rel="noopener"><code>MiniSoupTokeniserState</code></a>)：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> MiniSoupTokeniserState implements ITokeniserState &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 什么层级都没有的状态</span></span><br><span class="line"><span class="comment">     * ⬇</span></span><br><span class="line"><span class="comment">     * &lt;div&gt;test&lt;/div&gt;</span></span><br><span class="line"><span class="comment">     *      ⬇</span></span><br><span class="line"><span class="comment">     * &lt;div&gt;test&lt;/div&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    Data &#123;</span><br><span class="line">        <span class="comment">// in data state, gather characters until a character reference or tag is found</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(Tokeniser t, CharacterReader r)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (r.current()) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'&lt;'</span>:</span><br><span class="line">                    t.advanceTransition(TagOpen);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> eof:</span><br><span class="line">                    t.emit(<span class="keyword">new</span> Token.EOF());</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    String data = r.consumeToAny(<span class="string">'&amp;'</span>, <span class="string">'&lt;'</span>, nullChar);</span><br><span class="line">                    t.emit(data);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * ⬇</span></span><br><span class="line"><span class="comment">     * &lt;div&gt;test&lt;/div&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    TagOpen &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *           ⬇</span></span><br><span class="line"><span class="comment">     * &lt;div&gt;test&lt;/div&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    EndTagOpen &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  ⬇</span></span><br><span class="line"><span class="comment">     * &lt;div&gt;test&lt;/div&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    TagName &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考这个程序，可以看到Jsoup的词法分析的大致思路。分析器本身的编写是比较繁琐的过程，涉及属性值(区分单双引号)、DocType、注释、HTML实体，以及一些错误情况。不过了解了其思路，代码实现也是按部就班的过程。</p>
-<p>下一节开始介绍语法分析部分。</p>
+          <p><br></p>
+
+
+	<div class="row">
+    <embed src="git基本操作.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+<p><br></p>
 
           
           <hr>
           <ul class="pager">
               
               <li class="previous">
-                  <a href="/jsoup learning 8/" data-toggle="tooltip" data-placement="left" title="Jsoup代码解读之八-防御XSS攻击">&larr; Previous Post</a>
+                  <a href="/post-name/" data-toggle="tooltip" data-placement="left" title="post name">&larr; Previous Post</a>
               </li>
               
               
               <li class="next">
-                  <a href="/jsoup learning 7/" data-toggle="tooltip" data-placement="top" title="Jsoup代码解读之七-实现一个CSS Selector">Next Post&rarr;</a>
+                  <a href="/tutorial/" data-toggle="tooltip" data-placement="top" title="Tutorial: How to Use Hexo's A-Snippet Theme">Next Post&rarr;</a>
               </li>
               
           </ul>
@@ -273,7 +247,7 @@
       <script>
       var disqus_shortname = 'hexo-a-rsnippet';
       
-      var disqus_url = 'http://yoursite.com/jsoup learning 5/';
+      var disqus_url = 'http://yoursite.com/git/';
       
       (function(){
         var dsq = document.createElement('script');
