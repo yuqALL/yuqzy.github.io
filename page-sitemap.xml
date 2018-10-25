@@ -8,14 +8,14 @@
     </url>
     
     <url>
-        <loc>http://yoursite.com/archives/</loc>
+        <loc>http://yoursite.com/404/</loc>
         <lastmod>2018-01-30T04:20:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://yoursite.com/404/</loc>
+        <loc>http://yoursite.com/archives/</loc>
         <lastmod>2018-01-30T04:20:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
