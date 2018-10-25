@@ -531,18 +531,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jsoup learning 8/" rel="next" title="Jsoup代码解读之八-防御XSS攻击">
-                <i class="fa fa-chevron-left"></i> Jsoup代码解读之八-防御XSS攻击
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/jsoup learning 7/" rel="prev" title="Jsoup代码解读之七-实现一个CSS Selector">
-                Jsoup代码解读之七-实现一个CSS Selector <i class="fa fa-chevron-right"></i>
+              <a href="/jsoup learning 8/" rel="prev" title="Jsoup代码解读之八-防御XSS攻击">
+                Jsoup代码解读之八-防御XSS攻击 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -572,6 +568,11 @@
 
           
   <div class="comments" id="comments">
+    
+       
+         <div id="gitment-container"></div>
+       
+
     
   </div>
 
@@ -860,6 +861,27 @@
 
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: '',
+               repo: '',
+               oauth: {
+                   client_id: '',
+                   client_secret: '',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
 
 
   

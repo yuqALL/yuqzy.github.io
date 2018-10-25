@@ -510,8 +510,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jsoup learning 1/" rel="next" title="Jsoup代码解读之一-概述">
-                <i class="fa fa-chevron-left"></i> Jsoup代码解读之一-概述
+              <a href="/htmlcleaner/" rel="next" title="htmlcleaner代码学习">
+                <i class="fa fa-chevron-left"></i> htmlcleaner代码学习
               </a>
             
           </div>
@@ -520,8 +520,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/htmlcleaner/" rel="prev" title="htmlcleaner代码学习">
-                htmlcleaner代码学习 <i class="fa fa-chevron-right"></i>
+              <a href="/3D_Vision_1/" rel="prev" title="3维运动表达">
+                3维运动表达 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -551,6 +551,11 @@
 
           
   <div class="comments" id="comments">
+    
+       
+         <div id="gitment-container"></div>
+       
+
     
   </div>
 
@@ -839,6 +844,27 @@
 
 
 
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: '',
+               repo: '',
+               oauth: {
+                   client_id: '',
+                   client_secret: '',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
 
 
   
