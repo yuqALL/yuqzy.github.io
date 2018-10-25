@@ -517,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jsoup learning 8/" rel="next" title="Jsoup代码解读之八-防御XSS攻击">
-                <i class="fa fa-chevron-left"></i> Jsoup代码解读之八-防御XSS攻击
+              <a href="/jsoup learning 6/" rel="next" title="Jsoup代码解读之六-parser(下)">
+                <i class="fa fa-chevron-left"></i> Jsoup代码解读之六-parser(下)
               </a>
             
           </div>
@@ -527,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/jsoup learning 6/" rel="prev" title="Jsoup代码解读之六-parser(下)">
-                Jsoup代码解读之六-parser(下) <i class="fa fa-chevron-right"></i>
+              <a href="/jsoup learning 5/" rel="prev" title="Jsoup代码解读之五-parser(中)">
+                Jsoup代码解读之五-parser(中) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -559,9 +559,40 @@
           
   <div class="comments" id="comments">
     
-       
-         <div id="gitment-container"></div>
-       
+      <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
+      <div id="container" style="display:none"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+      const myTheme = {
+        render(state, instance) {
+        const container = document.createElement('div');
+        container.lang = "en-US";
+        container.className = 'gitment-container gitment-root-container';
+        container.appendChild(instance.renderHeader(state, instance));
+        container.appendChild(instance.renderEditor(state, instance));
+        container.appendChild(instance.renderComments(state, instance));
+        container.appendChild(instance.renderFooter(state, instance));
+        return container;
+        }
+      }
+      function showGitment() {
+      $("#gitment_title").attr("style", "display:none");
+      $("#container").attr("style", "").addClass("gitment_container");
+      var gitment = new Gitment({
+        id: window.location.pathname,
+        theme: myTheme,
+        owner: '',
+        repo: '',
+        oauth: {
+          client_id: '[object Object]',
+          client_secret: '[object Object]'
+        }
+      });
+      gitment.render('container');
+      }
+      </script>
+  
 
     
   </div>
