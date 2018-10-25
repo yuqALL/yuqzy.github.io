@@ -44,6 +44,33 @@
   </entry>
   
   <entry>
+    <title>htmlcleaner代码学习</title>
+    <link href="http://yoursite.com/htmlcleaner/"/>
+    <id>http://yoursite.com/htmlcleaner/</id>
+    <published>2017-12-31T16:00:00.000Z</published>
+    <updated>2018-10-25T08:19:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="htmlcleaner代码学习"><a href="#htmlcleaner代码学习" class="headerlink" title="htmlcleaner代码学习"></a>htmlcleaner代码学习</h2><p>相比Jsoup，htmlcleaner支持XPath进行抽取，也是挺有用的。</p><p>htmlcleaner托管在sourceforge下<a href="http://htmlcleaner.sourceforge.net/‎" target="_blank" rel="noopener">http://htmlcleaner.sourceforge.net/‎</a>，由于某种原因，访问sourceforge不是那么顺畅，最后选了这个比较新的github上的fork:<a href="https://github.com/amplafi/htmlcleaner" target="_blank" rel="noopener">https://github.com/amplafi/htmlcleaner</a>。</p><p>htmlcleaner的包结构与Jsoup还是有些差距，一开始就被一字排开的类给吓到了。</p><p>htmlcleaner仍然有一套自己的树结构，继承自:<code>HtmlNode</code>。但是它提供了到<code>org.w3c.dom.Document</code>和<code>org.jdom2.Document</code>的转换。</p><p><code>HtmlTokenizer</code>是词法分析部分，有状态但是没用状态机，而是用了一些基本类型来保存状态，例如：</p><pre><code>public class HtmlTokenizer {    private BufferedReader _reader;    private char[] _working = new char[WORKING_BUFFER_SIZE];    private transient int _pos;    private transient int _len = -1;    private transient int _row = 1;    private transient int _col = 1;    private transient StringBuffer _saved = new StringBuffer(512);    private transient boolean _isLateForDoctype;    private transient DoctypeToken _docType;    private transient TagToken _currentTagToken;    private transient List&lt;BaseToken&gt; _tokenList = new ArrayList&lt;BaseToken&gt;();    private transient Set&lt;String&gt; _namespacePrefixes = new HashSet&lt;String&gt;();    private boolean _asExpected = true;    private boolean _isScriptContext;}</code></pre><p>浓烈的面向过程编程的味道。</p><p><code>Tokenize</code>之后就是简单的用栈将树组合起来。</p><p>测试了一下，一个44k的文档，用Jsoup做parse是3.5ms，而htmlcleaner是7.9ms，差距在一倍左右。</p><p>XPath部分也是云里雾里，</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;htmlcleaner代码学习&quot;&gt;&lt;a href=&quot;#htmlcleaner代码学习&quot; class=&quot;headerlink&quot; title=&quot;htmlcleaner代码学习&quot;&gt;&lt;/a&gt;htmlcleaner代码学习&lt;/h2&gt;&lt;p&gt;相比Jsoup，htmlcleane
+      
+    
+    </summary>
+    
+      <category term="language" scheme="http://yoursite.com/categories/language/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
+    
+    
+      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>图像匹配问题</title>
     <link href="http://yoursite.com/3D_Vision_4/"/>
     <id>http://yoursite.com/3D_Vision_4/</id>
@@ -68,33 +95,6 @@
     
     
       <category term="math" scheme="http://yoursite.com/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>htmlcleaner代码学习</title>
-    <link href="http://yoursite.com/htmlcleaner/"/>
-    <id>http://yoursite.com/htmlcleaner/</id>
-    <published>2017-12-31T16:00:00.000Z</published>
-    <updated>2018-10-25T08:19:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="htmlcleaner代码学习"><a href="#htmlcleaner代码学习" class="headerlink" title="htmlcleaner代码学习"></a>htmlcleaner代码学习</h2><p>相比Jsoup，htmlcleaner支持XPath进行抽取，也是挺有用的。</p><p>htmlcleaner托管在sourceforge下<a href="http://htmlcleaner.sourceforge.net/‎" target="_blank" rel="noopener">http://htmlcleaner.sourceforge.net/‎</a>，由于某种原因，访问sourceforge不是那么顺畅，最后选了这个比较新的github上的fork:<a href="https://github.com/amplafi/htmlcleaner" target="_blank" rel="noopener">https://github.com/amplafi/htmlcleaner</a>。</p><p>htmlcleaner的包结构与Jsoup还是有些差距，一开始就被一字排开的类给吓到了。</p><p>htmlcleaner仍然有一套自己的树结构，继承自:<code>HtmlNode</code>。但是它提供了到<code>org.w3c.dom.Document</code>和<code>org.jdom2.Document</code>的转换。</p><p><code>HtmlTokenizer</code>是词法分析部分，有状态但是没用状态机，而是用了一些基本类型来保存状态，例如：</p><pre><code>public class HtmlTokenizer {    private BufferedReader _reader;    private char[] _working = new char[WORKING_BUFFER_SIZE];    private transient int _pos;    private transient int _len = -1;    private transient int _row = 1;    private transient int _col = 1;    private transient StringBuffer _saved = new StringBuffer(512);    private transient boolean _isLateForDoctype;    private transient DoctypeToken _docType;    private transient TagToken _currentTagToken;    private transient List&lt;BaseToken&gt; _tokenList = new ArrayList&lt;BaseToken&gt;();    private transient Set&lt;String&gt; _namespacePrefixes = new HashSet&lt;String&gt;();    private boolean _asExpected = true;    private boolean _isScriptContext;}</code></pre><p>浓烈的面向过程编程的味道。</p><p><code>Tokenize</code>之后就是简单的用栈将树组合起来。</p><p>测试了一下，一个44k的文档，用Jsoup做parse是3.5ms，而htmlcleaner是7.9ms，差距在一倍左右。</p><p>XPath部分也是云里雾里，</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;htmlcleaner代码学习&quot;&gt;&lt;a href=&quot;#htmlcleaner代码学习&quot; class=&quot;headerlink&quot; title=&quot;htmlcleaner代码学习&quot;&gt;&lt;/a&gt;htmlcleaner代码学习&lt;/h2&gt;&lt;p&gt;相比Jsoup，htmlcleane
-      
-    
-    </summary>
-    
-      <category term="language" scheme="http://yoursite.com/categories/language/"/>
-    
-      <category term="java" scheme="http://yoursite.com/categories/language/java/"/>
-    
-    
-      <category term="javaCode" scheme="http://yoursite.com/tags/javaCode/"/>
     
   </entry>
   
