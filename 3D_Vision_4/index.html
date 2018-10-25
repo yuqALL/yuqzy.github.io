@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- layout.ejs-->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A website for A-RSnippet Hexo Theme">
+    <meta name="author" content="Qiang Yu">
+    <meta name="keyword" content="machine learning, bootstrap">
+    <link rel="canonical" href="http://yoursite.com/3D_Vision_4/">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="yuqZY &lt;a class=&#34;github-button&#34; href=&#34;https://github.com/yuqZY/yuqzy.github.io&#34; data-icon=&#34;octicon-star&#34; data-show-count=&#34;true&#34; aria-label=&#34;Star huyingjie/hexo-theme-A-RSnippet on GitHub&#34;&gt;Star&lt;/a&gt;" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <title>
+        
+        图像匹配问题｜yuq Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/css/highlight.css">
+    
+
+    
+      <script id="dsq-count-scr" src="//hexo-a-rsnippet.disqus.com/count.js" async></script>
+    
+
+
+    
+      <meta name="google-site-verification" content="wtCjI-zcpr2FYwWS3sI4OWzMK9e7VomDrZyxpVUUIng">
+    
+
+    
+
+    
+
+
+    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-38355881-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- user customization -->
+    <link rel="stylesheet" href="/css/arsnippet.css">
+    <script src="/js/arsnippet.css.js"></script>
+</head>
+
+<style>
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<header>
+  <nav class="navbar navbar-default header-navbar" id="nav-top" data-ispost="true" data-istags="false" data-ishome="false">
+    <div class="container-fluid">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" aria-expanded="false" data-target="#website_navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand animated pulse">
+          <a class="brand-logo" href="/">
+            yuqZY <a class="github-button" href="https://github.com/yuqZY/yuqzy.github.io" data-icon="octicon-star" data-show-count="true" aria-label="Star huyingjie/hexo-theme-A-RSnippet on GitHub">Star</a>
+          </a>
+        </span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="website_navbar">
+          <ul class="nav navbar-nav navbar-right">
+              
+                <li>
+                  <a href="/">home</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-category/">LeetCode-category</a>
+                </li>
+              
+                <li>
+                  <a href="/leetcode-tag/">LeetCode-tag</a>
+                </li>
+              
+                <li>
+                  <a href="/archives/">archives</a>
+                </li>
+              
+                <li>
+                  <a href="/tags/">tags</a>
+                </li>
+              
+                <li>
+                  <a href="/portfolio-slim/">projects</a>
+                </li>
+              
+                <li>
+                  <a href="/support/">support</a>
+                </li>
+              
+                <li>
+                  <a href="/atom.xml">RSS</a>
+                </li>
+              
+          </ul>
+      </div>
+  </div></nav>
+
+
+  
+    <style>
+       .intro-header {
+          background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&amp;auto=compress&amp;cs=tinysrgb');
+      }
+    </style>
+
+    <div class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                    <div class="site-heading">
+                        <h1>图像匹配问题</h1>
+                        
+                        
+                          <span class="meta">
+                               <span class="meta-item">博主: Qiang Yu</span>
+                               <span class="meta-item">创建于: 2018-01-01</span>
+                               
+                                 <span class="meta-item">更新于: 2018-10-25</span>
+                               
+                          </span>
+                          <div class="tags text-center">
+                              分类: 
+                              <a class="tag" href="/categories/#language" title="language">language</a>
+                              
+                              <a class="tag" href="/categories/#c++" title="c++">c++</a>
+                              
+                          </div>
+                          <div class="tags text-center">
+                              标签: 
+                              <a class="tag" href="/tags/#math" title="math">math</a>
+                              
+                          </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</header>
+
+
+<!-- Main Content -->
+<!-- post.ejs -->
+<article>
+    <div class="container">
+      <div class="col-lg-8 col-lg-offset-1 col-sm-9">
+          
+            <div class="text-center"><div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5272bc2a7b3c1ddc" async="async"></script>
+</div>
+</div><hr>
+          
+          
+          <h1 id="图像匹配问题"><a href="#图像匹配问题" class="headerlink" title="图像匹配问题"></a>图像匹配问题</h1><hr>
+<h2 id="Chapter-4-Image-primitives-and-correspondence"><a href="#Chapter-4-Image-primitives-and-correspondence" class="headerlink" title="Chapter 4 Image primitives and correspondence"></a>Chapter 4 Image primitives and correspondence</h2><blockquote>
+<p>本部分主要讲述图像匹配问题,研究如何从图像反过来重建3D场景。这是一个非常复杂的过程，往往是无法从一张图像复原3D场景的，在后续的内容将会介绍到的双目视觉及多目视觉可以在一定程度解决问题。</p>
+</blockquote>
+<p>一张图片往往由环境的 <strong>几何信息（geometry of the scene）</strong> 和 <strong>光线分布（light distribution）</strong> 共同组成，这两者在单一图片中往往是难以分割的，我们不能将他们分开来单独讨论。一个物体可以由特定的光线分布构成一幅图像，而另一个物体通过另一种光线分布可能形成与前面相同的图像（个人理解，这里可以想象一下镜子），很简单的例子就是形成的图像本身。物体形成的图像与人眼看到的真实世界几乎一致，但却不是真实的世界。</p>
+<p>但是对同一场景，如果我们可以从不同的角度、位置拍摄图像，那么我们就有可能从多张图片中获取场景的几何信息。实际上，虽然每幅图像由相机的位置决定，但是场景的几何信息和光线分布是不变的（假设拍摄期间场景没有变化）。当我们从不同的角度观察时，很容易观察到场景图像的变化：远处的物体移动慢，近处物体移动快。但是当我们将相机对着平面图像运动时，我们会发现所有点朝着相同的方向移动。这是因为3D场景比平面图像多了一个维度信息，一般称作<strong>深度信息</strong>。</p>
+<p>从上述过程中，我们可以直观的感受到，要想从图片中重建三维世界，我们必须对同一场景拍摄多张图片。但是，对于同一场景不同图片上的点，如何建立它们之间的对应关系？这是重建场景的核心问题，被称为<strong>匹配问题（correspondence problem）</strong>。</p>
+<p>对于大部分场景而言，上述问题往往是无解的。如果图像之间的光线分布和几何信息可以随意改变，那么将没有办法建立不同图像上点之间的对应关系。例如，我们让一个白色的大理石球体旋转，每张图片几乎都一样，那怎么建立匹配呢？那如果这里改成静止的镜面反射的球体，让光源移动，尽管物体上的点是静止的，但是不同的图片上看见的外观一点都不一样。甚至如果光线和几何信息都保持不变，而物体的表面具有各向异性的反射特性，以至于从不同的视角看到不一样形貌，建立匹配将会非常的困难。</p>
+<blockquote>
+<p>本节内容就是聚焦在<strong>什么样的情况下，匹配问题能够解决</strong>，并且是十分容易解决的。</p>
+</blockquote>
+<h3 id="4-1-Correspondence-between-images"><a href="#4-1-Correspondence-between-images" class="headerlink" title="4.1 Correspondence between images"></a>4.1 Correspondence between images</h3><blockquote>
+<p>在一幅图像中重点标出一个点（3D point），并在另一幅图像中找到这个点，这就是建立匹配模型要达到的目标。</p>
+</blockquote>
+<p>假设有一幅图像标记为$I_1$，在电脑中常常表现为一个二维矩阵，将这个二维区域记作$\Omega$，其内的值记作$I(x)$(强度 irradiance)(x表示像素位置，一般是一个矢量)，$I(x)$一般是一个正数。故可以如下的关系：<br>$$ I_1 : \Omega \subset R^2 \rightarrow R_+ $$ $$ x \mapsto I(x)$$</p>
+
+          
+          <hr>
+          <ul class="pager">
+              
+              <li class="previous">
+                  <a href="/long-title/" data-toggle="tooltip" data-placement="left" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.">&larr; 上一篇</a>
+              </li>
+              
+              
+              <li class="next">
+                  <a href="/htmlcleaner/" data-toggle="tooltip" data-placement="top" title="htmlcleaner代码学习">下一篇&rarr;</a>
+              </li>
+              
+          </ul>
+        
+  <br>
+  
+  <!-- disqus start -->
+  <div class="comment">
+    <div id="disqus_thread" class="disqus-thread"></div>
+      <script>
+      var disqus_shortname = 'hexo-a-rsnippet';
+      
+      var disqus_url = 'http://yoursite.com/3D_Vision_4/';
+      
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <!-- disqus end -->
+  
+
+  
+  
+
+
+        
+  <div class="hidden-xs col-sm-3 toc-col">
+    <div class="toc-wrap">
+        目录
+        
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图像匹配问题"><span class="toc-number">1.</span> <span class="toc-text">图像匹配问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-4-Image-primitives-and-correspondence"><span class="toc-number">1.1.</span> <span class="toc-text">Chapter 4 Image primitives and correspondence</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Correspondence-between-images"><span class="toc-number">1.1.1.</span> <span class="toc-text">4.1 Correspondence between images</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+  </div>
+
+
+      </div>
+  </div>
+</article>
+
+<!-- Footer -->
+<!-- footer.ejs -->
+<footer>
+    <div class="text-center">
+      <ul class="list-inline">
+          
+              <li>
+                  <a href="/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+          
+          
+
+          
+
+          
+
+          
+              <li>
+                  <a target="_blank" href="https://github.com/yuqZY">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+          
+
+          
+              <li>
+                  <a href="mailto:yuq329@outlook.com" target="_blank">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                  </a>
+              </li>
+          
+
+      </ul>
+     <div class="text-muted copyright">
+            &copy;
+            
+            2016 - 2018
+            
+            
+              <i class="fa fa-heart"></i>
+            
+            Qiang Yu
+        <br>
+          
+              由 <a target="_blank" href="https://hexo.io">Hexo</a> 强力驱动
+          
+          
+          
+          
+      </div>
+    </div>
+</footer>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+</body>
+
+</html>
