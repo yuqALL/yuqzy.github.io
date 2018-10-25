@@ -255,6 +255,26 @@ Jsoup是Java世界用作html解析和过滤的不二之选。支持将html解析
 
           
             <div class="post-preview " style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
+    <a href="/jsoup learning 2/">
+        <h2 class="post-title">
+            Jsoup代码解读之二-DOM相关对象
+        </h2>
+        
+        <div class="post-meta">
+          <span>2018-01-01</span>
+          
+        </div>
+        <div class="post-content-preview">
+            <p>
+                Jsoup代码解读之二-DOM相关对象之前在文章中说到，Jsoup使用了一套自己的DOM对象体系，和Java XML API互不兼容。这样做的好处是从XML的API里解脱出来，使得代码精炼了很多。这篇文章会说明Jsoup的DOM结构，DOM的遍历方式。在下一篇文章，我会并结合这两个基础，分析一下..
+            </p>
+        </div>
+    </a>
+</div>
+<hr>
+
+          
+            <div class="post-preview " style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
     <a href="/jsoup learning 3/">
         <h2 class="post-title">
             Jsoup代码解读之三-Document的输出
@@ -279,9 +299,9 @@ HTML相关知识分析代码前，我们不妨先想想，”tidy HTML”到底�
 
           
             <div class="post-preview " style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/jsoup learning 2/">
+    <a href="/jsoup learning 4/">
         <h2 class="post-title">
-            Jsoup代码解读之二-DOM相关对象
+            Jsoup代码解读之四-parser(上)
         </h2>
         
         <div class="post-meta">
@@ -290,7 +310,7 @@ HTML相关知识分析代码前，我们不妨先想想，”tidy HTML”到底�
         </div>
         <div class="post-content-preview">
             <p>
-                Jsoup代码解读之二-DOM相关对象之前在文章中说到，Jsoup使用了一套自己的DOM对象体系，和Java XML API互不兼容。这样做的好处是从XML的API里解脱出来，使得代码精炼了很多。这篇文章会说明Jsoup的DOM结构，DOM的遍历方式。在下一篇文章，我会并结合这两个基础，分析一下..
+                Jsoup代码解读之四-parser(上)作为Java世界最好的HTML 解析库，Jsoup的parser实现非常具有代表性。这部分也是Jsoup最复杂的部分，需要一些数据结构、状态机乃至编译器的知识。好在HTML语法不复杂，解析只是到DOM树为止，所以作为编译器入门倒是挺合适的。这一块不要指望..
             </p>
         </div>
     </a>
@@ -323,9 +343,9 @@ Parser
 
           
             <div class="post-preview " style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/jsoup learning 4/">
+    <a href="/jsoup learning 7/">
         <h2 class="post-title">
-            Jsoup代码解读之四-parser(上)
+            Jsoup代码解读之七-实现一个CSS Selector
         </h2>
         
         <div class="post-meta">
@@ -334,7 +354,9 @@ Parser
         </div>
         <div class="post-content-preview">
             <p>
-                Jsoup代码解读之四-parser(上)作为Java世界最好的HTML 解析库，Jsoup的parser实现非常具有代表性。这部分也是Jsoup最复杂的部分，需要一些数据结构、状态机乃至编译器的知识。好在HTML语法不复杂，解析只是到DOM树为止，所以作为编译器入门倒是挺合适的。这一块不要指望..
+                Jsoup代码解读之七-实现一个CSS Selector
+当当当！终于来到了Jsoup的特色：CSS Selector部分。selector也是我写的爬虫框架webmagic开发的一个重点。附上一张street fighter的图，希望以后webmagic也能挑战Jsoup!
+select机制J..
             </p>
         </div>
     </a>
@@ -378,28 +400,6 @@ Parser
                 Jsoup代码解读之八-防御XSS攻击
 防御XSS攻击的一般原理cleaner是Jsoup的重要功能之一，我们常用它来进行富文本输入中的XSS防御。
 我们知道，XSS攻击的一般方式是，通过在页面输入中嵌入一段恶意脚本，对输出时的DOM结构进行修改，从而达到执行这段脚本的目的。对于纯文本输入，过滤..
-            </p>
-        </div>
-    </a>
-</div>
-<hr>
-
-          
-            <div class="post-preview " style="background-image: url('/img/sky-clouds-moon-horizon.jpg?h=350&auto=compress&cs=tinysrgb')">
-    <a href="/jsoup learning 7/">
-        <h2 class="post-title">
-            Jsoup代码解读之七-实现一个CSS Selector
-        </h2>
-        
-        <div class="post-meta">
-          <span>2018-01-01</span>
-          
-        </div>
-        <div class="post-content-preview">
-            <p>
-                Jsoup代码解读之七-实现一个CSS Selector
-当当当！终于来到了Jsoup的特色：CSS Selector部分。selector也是我写的爬虫框架webmagic开发的一个重点。附上一张street fighter的图，希望以后webmagic也能挑战Jsoup!
-select机制J..
             </p>
         </div>
     </a>
